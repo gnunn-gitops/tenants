@@ -1,0 +1,44 @@
+tenant: rollouts-demo
+
+default:
+  destination: workload-prod-local
+  networkPolicy: true
+  quota: medium
+  # Labels applied to all namespaces, merged with labels defined on namespace
+  labels:
+    tenant: rollouts-demo
+
+argocd:
+  # Namespace where the tenant Argo CD is located, if
+  # set an AppProject for the tenant will be created
+  namespace: argocd
+  # Repositories the tenant is limited to
+  sourceRepos:
+    - '*'
+  # Groups for which users will be admins of the AppProject
+  adminGroups:
+    - rollouts-demo-admins
+  userGroups:
+    - rollouts-demo-users
+  pipelineGroups:
+    - rollouts-demo-pipeline
+
+namespaces:
+
+  dev:
+    labels:
+      openshift.io/display-name: Rollouts Demo Development
+
+  prod:
+    labels:
+      openshift.io/display-name: Rollouts Demo Production
+
+  cicd:
+    labels:
+      openshift.io/display-name: Rollouts Demo CICD
+
+  argocd:
+    destination: hub-prod-local
+    labels:
+      openshift.io/display-name: Rollouts Demo Argo CD
+    quota: small
