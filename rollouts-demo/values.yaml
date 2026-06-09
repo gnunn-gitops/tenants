@@ -26,19 +26,19 @@ argocd:
 namespaces:
 
   dev:
-    labels:
+    annotations:
       openshift.io/display-name: Rollouts Demo Development
 
   prod:
-    labels:
+    annotations:
       openshift.io/display-name: Rollouts Demo Production
 
   cicd:
-    labels:
+    annotations:
       openshift.io/display-name: Rollouts Demo CICD
 
   argocd:
     destination: hub-prod-local
-    labels:
+    annotations:
       openshift.io/display-name: Rollouts Demo Argo CD
     quota: small
