@@ -8,6 +8,8 @@ default:
   labels:
     tenant: rollouts-demo
 
+externalSecrets: true
+
 argocd:
   # Namespace where the tenant Argo CD is located, if
   # set an AppProject for the tenant will be created
