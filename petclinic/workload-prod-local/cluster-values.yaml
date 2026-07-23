@@ -12,4 +12,10 @@ extraObjects:
     subjects:
       - kind: ServiceAccount
         name: default
+        namespace: petclinic-dev
+      - kind: ServiceAccount
+        name: default
+        namespace: petclinic-stage
+      - kind: ServiceAccount
+        name: default
         namespace: petclinic-prod
