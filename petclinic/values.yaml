@@ -33,6 +33,10 @@ namespaces:
     annotations:
       openshift.io/display-name: Pet Clinic Development
 
+  stage:
+    annotations:
+      openshift.io/display-name: Pet Clinic Stage
+
   prod:
     annotations:
       openshift.io/display-name: Pet Clinic Production
