@@ -1,0 +1,48 @@
+tenant: petclinic
+
+default:
+  destination: workload-prod-local
+  networkPolicy: true
+  quota: medium
+  # Labels applied to all namespaces, merged with labels defined on namespace
+  labels:
+    tenant: petclinic
+
+externalSecrets:
+  enabled: true
+  tokenKey: PETCLINIC
+
+argocd:
+  # Namespace where the tenant Argo CD is located, if
+  # set an AppProject for the tenant will be created
+  namespace: argocd
+  # Repositories the tenant is limited to
+  sourceRepos:
+    - '*'
+  # Groups for which users will be admins of the AppProject
+  adminGroups:
+    - petclinic-admins
+  userGroups:
+    - petclinic-users
+  pipelineGroups:
+    - petclinic-pipeline
+
+namespaces:
+
+  dev:
+    annotations:
+      openshift.io/display-name: Pet Clinic Development
+
+  prod:
+    annotations:
+      openshift.io/display-name: Pet Clinic Production
+
+  ci:
+    annotations:
+      openshift.io/display-name: Pet Clinic CI
+
+  argocd:
+    destination: hub-prod-local
+    annotations:
+      openshift.io/display-name: Pet Clinic Argo CD
+    quota: small
