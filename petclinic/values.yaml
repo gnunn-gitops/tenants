@@ -13,6 +13,9 @@ default:
     userGroups:
     - petclinic-users
 
+acs:
+  cluster: hub-prod-local
+  adminGroup: petclinic-admins
 
 externalSecrets:
   enabled: true
