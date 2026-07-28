@@ -7,6 +7,12 @@ default:
   # Labels applied to all namespaces, merged with labels defined on namespace
   labels:
     tenant: petclinic
+  rbac:
+    adminGroups:
+    - petclinic-admins
+    userGroups:
+    - petclinic-users
+
 
 externalSecrets:
   enabled: true

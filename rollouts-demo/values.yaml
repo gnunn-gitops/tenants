@@ -7,6 +7,12 @@ default:
   # Labels applied to all namespaces, merged with labels defined on namespace
   labels:
     tenant: rollouts-demo
+  rbac:
+    adminGroups:
+    - rollouts-demo-admins
+    userGroups:
+    - rollouts-demo-users
+
 
 externalSecrets:
   enabled: true
