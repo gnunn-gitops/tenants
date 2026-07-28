@@ -3,7 +3,7 @@ tenant: petclinic
 default:
   destination: workload-prod-local
   networkPolicy: true
-  quota: medium
+  quota: large
   # Labels applied to all namespaces, merged with labels defined on namespace
   labels:
     tenant: petclinic
