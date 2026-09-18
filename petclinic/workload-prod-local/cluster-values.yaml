@@ -28,8 +28,5 @@ extraObjects:
       name: pipelines-user-namespaces
     subjects:
       - kind: ServiceAccount
-        name: pipeline
-        namespace: petclinic-ci
-      - kind: ServiceAccount
         name: pipeline-user-namespace
         namespace: petclinic-ci
